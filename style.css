@@ -1,6 +1,11 @@
+.jumbotron {
+    background-color: white;
+    padding-top: 0px;
+}
+
 .col-sm-2 {
     background-color: rgb(14, 81, 168);
     color: white;
-    margin: 2px;
+    margin-right: 20px;
 
 }
