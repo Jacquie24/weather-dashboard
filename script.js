@@ -71,7 +71,7 @@ $(document).ready(function () {
 
         // Pulling the icon image from url on Open Weather
         var icon =
-          "http://openweathermap.org/img/wn/" +
+          "https://openweathermap.org/img/wn/" +
           response.daily[1].weather[0].icon +
           "@2x.png";
 
@@ -100,7 +100,7 @@ $(document).ready(function () {
 
         // Pulling the icon image from url on Open Weather
         var icon =
-          "http://openweathermap.org/img/wn/" +
+          "https://openweathermap.org/img/wn/" +
           response.daily[2].weather[0].icon +
           "@2x.png";
 
@@ -132,7 +132,7 @@ $(document).ready(function () {
 
         // Pulling the icon image from url on Open Weather
         var icon =
-          "http://openweathermap.org/img/wn/" +
+          "https://openweathermap.org/img/wn/" +
           response.daily[3].weather[0].icon +
           "@2x.png";
 
@@ -163,7 +163,7 @@ $(document).ready(function () {
 
         // Pulling the icon image from url on Open Weather
         var icon =
-          "http://openweathermap.org/img/wn/" +
+          "https://openweathermap.org/img/wn/" +
           response.daily[4].weather[0].icon +
           "@2x.png";
 
@@ -194,7 +194,7 @@ $(document).ready(function () {
 
         // Pulling the icon image from url on Open Weather
         var icon =
-          "http://openweathermap.org/img/wn/" +
+          "https://openweathermap.org/img/wn/" +
           response.daily[5].weather[0].icon +
           "@2x.png";
 
