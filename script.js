@@ -3,10 +3,18 @@ $(document).ready(function () {
 
 //   var cityName = ("#city-name");
 
-  var queryURL =
-    "https://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&appid=365123eba1af25b06512788f470f09e4";
+$("#run-search").on("click", function(event) {
 
-    var oneCallUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=51.51&lon=-0.13&exclude=minutely,hourly&appid=365123eba1af25b06512788f470f09e4"
+    // event.preventDefault() can be used to prevent an event's default behavior.
+    // Here, it prevents the submit button from trying to submit a form when clicked
+    event.preventDefault();
+
+    // Here we grab the text from the input box
+    var cityName = $("#search-city").val();
+
+  var queryURL =
+    "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=365123eba1af25b06512788f470f09e4";
+
 
 
 
@@ -34,15 +42,27 @@ $(document).ready(function () {
 
     $("#city-name").append(cityList);
 
-    // var speed = response.wind.speed;
-    // var lTwo = $("<p>").text("Wind Speed: " + speed);
-    // $("#city-name").append(lTwo);
-
-
-
     var longitude = response.coord.lon;
     var latitude = response.coord.lat;
+
+    var oneCallUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=minutely,hourly&appid=365123eba1af25b06512788f470f09e4";
+
+
+
+    $.ajax({
+    method: "GET",
+    url: oneCallUrl,
+  }).then(function (response) {
+    console.log(response);
+
+
+  })
+
+
+    
   });
+
+});
 
 // $.ajax({
 //     method: "GET",
