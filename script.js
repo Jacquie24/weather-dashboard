@@ -24,7 +24,8 @@ $(document).ready(function () {
       var cityList = $("<div>");
 
       var city = response.name;
-      var cityTitle = $("<h1>").text(city);
+      var date = new Date(response.dt*1000).toLocaleDateString("en-US");
+      var cityTitle = $("<h1>").text(city + "(" + date + ")");
       cityList.append(cityTitle);
       var temp = response.main.temp;
       var tempTitle = $("<p>").text("Temperature: " + temp + " ℉");
@@ -59,48 +60,164 @@ $(document).ready(function () {
         var uvi = response.current.uvi;
         var uviTitle = $("<p>").text("UV Index: " + uvi);
         cityList.append(uviTitle);
+        
+        // Day one forecast
 
         var dayOne = $("<div>");
 
-        var dateOne = new Date(response.daily[0].dt*1000).toLocaleDateString("en-US");
-        var dateOneTitle = $("<h2>").text(dateOne);
+        var dateOne = new Date(response.daily[1].dt*1000).toLocaleDateString("en-US");
+        var dateOneTitle = $("<h4>").text(dateOne);
         dayOne.append(dateOneTitle);
 
         // Pulling the icon image from url on Open Weather
         var icon =
           "http://openweathermap.org/img/wn/" +
-          response.daily[0].weather[0].icon +
+          response.daily[1].weather[0].icon +
           "@2x.png";
 
         // Creating and storing an image tag
         var iconImage = $("<img>");
-
-        // Setting the icon src attribute
         iconImage.attr("src", icon);
         iconImage.attr("alt", "weather image");
-
-        // Appending the iconImage to the dayOne div
         dayOne.append(iconImage);
 
-        var dtempOne = response.daily[0].temp.day;
+        var dtempOne = response.daily[1].temp.day;
         var dtempOneTitle = $("<p>").text("Temp: " + dtempOne);
         dayOne.append(dtempOneTitle);
 
-        var humidityOne = response.daily[0].humidity;
+        var humidityOne = response.daily[1].humidity;
         var humidityOneTitle = $("<p>").text("Humidity: " + humidityOne);
         dayOne.append(humidityOneTitle);
 
-
-
         $("#day-one").append(dayOne);
+
+        // Day two forecast
+        var dayTwo = $("<div>");
+
+        var dateTwo = new Date(response.daily[2].dt*1000).toLocaleDateString("en-US");
+        var dateTwoTitle = $("<h4>").text(dateTwo);
+        dayTwo.append(dateTwoTitle);
+
+        // Pulling the icon image from url on Open Weather
+        var icon =
+          "http://openweathermap.org/img/wn/" +
+          response.daily[2].weather[0].icon +
+          "@2x.png";
+
+        // Creating and storing an image tag
+        var iconImage = $("<img>");
+        iconImage.attr("src", icon);
+        iconImage.attr("alt", "weather image");
+        dayTwo.append(iconImage);
+
+        var dtempTwo = response.daily[2].temp.day;
+        var dtempTwoTitle = $("<p>").text("Temp: " + dtempTwo);
+        dayTwo.append(dtempTwoTitle);
+
+        var humidityTwo = response.daily[2].humidity;
+        var humidityTwoTitle = $("<p>").text("Humidity: " + humidityTwo);
+        dayTwo.append(humidityTwoTitle);
+
+
+
+        $("#day-two").append(dayTwo);
+
+        // Day three forecast
+
+        var dayThree = $("<div>");
+
+        var dateThree = new Date(response.daily[3].dt*1000).toLocaleDateString("en-US");
+        var dateThreeTitle = $("<h4>").text(dateThree);
+        dayThree.append(dateThreeTitle);
+
+        // Pulling the icon image from url on Open Weather
+        var icon =
+          "http://openweathermap.org/img/wn/" +
+          response.daily[3].weather[0].icon +
+          "@2x.png";
+
+        // Creating and storing an image tag
+        var iconImage = $("<img>");
+        iconImage.attr("src", icon);
+        iconImage.attr("alt", "weather image");
+        dayThree.append(iconImage);
+
+        var dtempThree = response.daily[3].temp.day;
+        var dtempThreeTitle = $("<p>").text("Temp: " + dtempThree);
+        dayThree.append(dtempThreeTitle);
+
+        var humidityThree = response.daily[3].humidity;
+        var humidityThreeTitle = $("<p>").text("Humidity: " + humidityThree);
+        dayThree.append(humidityThreeTitle);
+
+
+
+        $("#day-three").append(dayThree);
+
+        // Day four forecast
+        var dayFour = $("<div>");
+
+        var dateFour = new Date(response.daily[4].dt*1000).toLocaleDateString("en-US");
+        var dateFourTitle = $("<h4>").text(dateFour);
+        dayFour.append(dateFourTitle);
+
+        // Pulling the icon image from url on Open Weather
+        var icon =
+          "http://openweathermap.org/img/wn/" +
+          response.daily[4].weather[0].icon +
+          "@2x.png";
+
+        // Creating and storing an image tag
+        var iconImage = $("<img>");
+        iconImage.attr("src", icon);
+        iconImage.attr("alt", "weather image");
+        dayFour.append(iconImage);
+
+        var dtempFour = response.daily[4].temp.day;
+        var dtempFourTitle = $("<p>").text("Temp: " + dtempFour);
+        dayFour.append(dtempFourTitle);
+
+        var humidityFour = response.daily[4].humidity;
+        var humidityFourTitle = $("<p>").text("Humidity: " + humidityFour);
+        dayFour.append(humidityFourTitle);
+
+
+
+        $("#day-four").append(dayFour);
+
+        // Day five forecast
+        var dayFive = $("<div>");
+
+        var dateFive = new Date(response.daily[5].dt*1000).toLocaleDateString("en-US");
+        var dateFiveTitle = $("<h4>").text(dateFive);
+        dayFive.append(dateFiveTitle);
+
+        // Pulling the icon image from url on Open Weather
+        var icon =
+          "http://openweathermap.org/img/wn/" +
+          response.daily[5].weather[0].icon +
+          "@2x.png";
+
+        // Creating and storing an image tag
+        var iconImage = $("<img>");
+        iconImage.attr("src", icon);
+        iconImage.attr("alt", "weather image");
+        dayFive.append(iconImage);
+
+        var dtempFive = response.daily[5].temp.day;
+        var dtempFiveTitle = $("<p>").text("Temp: " + dtempFive);
+        dayFive.append(dtempFiveTitle);
+
+        var humidityFive = response.daily[5].humidity;
+        var humidityFiveTitle = $("<p>").text("Humidity: " + humidityFive);
+        dayFive.append(humidityFiveTitle);
+
+
+
+        $("#day-five").append(dayFive);
       });
     });
   });
 
-  // $.ajax({
-  //     method: "GET",
-  //     url: oneCallUrl,
-  //   }).then(function (response) {
-  //     console.log(response);
-  //   });
+ 
 });
