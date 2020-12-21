@@ -45,7 +45,7 @@ $("#run-search").on("click", function(event) {
     var longitude = response.coord.lon;
     var latitude = response.coord.lat;
 
-    var oneCallUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=minutely,hourly&appid=365123eba1af25b06512788f470f09e4";
+    var oneCallUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=minutely,hourly&units=imperial&appid=365123eba1af25b06512788f470f09e4";
 
 
 
@@ -54,6 +54,30 @@ $("#run-search").on("click", function(event) {
     url: oneCallUrl,
   }).then(function (response) {
     console.log(response);
+
+    var uvi = response.current.uvi;
+    var uviTitle = $("<p>").text("UV Index: " + uvi);
+    cityList.append(uviTitle);
+
+    var dayOne = $("<div>");
+
+            // Saving the image_original_url property
+            var icon = "http://openweathermap.org/img/wn/" + response.daily[0].weather[0].icon + "@2x.png";
+
+            // Creating and storing an image tag
+            var iconImage = $("<img>");
+  
+            // Setting the icon src attribute
+            iconImage.attr("src", icon);
+            iconImage.attr("alt", "weather image");
+  
+            // Appending the iconImage to the dayOne div
+            dayOne.append(iconImage);
+  
+
+    $("#day-one").append(dayOne);
+
+
 
 
   })
