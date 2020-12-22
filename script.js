@@ -67,6 +67,7 @@ $(document).ready(function () {
 
         var city = response.name;
         var date = new Date(response.dt * 1000).toLocaleDateString("en-US");
+    
         var cityTitle = $("<h1>").text(city + "(" + date + ")");
         cityList.append(cityTitle);
         var temp = response.main.temp;
@@ -99,8 +100,9 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
 
-            var uvi = response.current.uvi;
-            var uviTitle = $("<p>").text("UV Index: " + uvi);
+            var uvi = response.current.uvi
+            var uviTitle = $("<p>").text("UV Index: " + uvi)
+            
             cityList.append(uviTitle);
 
             // Day one forecast
