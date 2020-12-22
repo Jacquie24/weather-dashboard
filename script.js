@@ -75,7 +75,7 @@ $(document).ready(function () {
 
         cityList.append(tempTitle);
         var speed = response.wind.speed;
-        var speedTitle = $("<p>").text("Wind speed: " + speed);
+        var speedTitle = $("<p>").text("Wind speed: " + speed + " MPH");
         cityList.append(speedTitle);
 
         var humidity = response.main.humidity;
