@@ -23,6 +23,12 @@
   </head>
   <body>
     <div class="container">
+      <header class="row mb-5" style="background-color: rgb(58, 174, 228);">
+        <div class="col-sm-12">
+          <h1>Weather Dashboard</h1>
+        </div>
+      </header>
+  
       <div class="row">
         <div class="col-sm-3">
           <div class="row">
@@ -35,7 +41,7 @@
                 <button
                   type="submit"
                   class="btn btn-default"
-                  style="background-color: blue; color: white"
+                  style="background-color: rgb(58, 174, 228); color: white"
                   id="run-search"
                 >
                   <i class="fa fa-search"></i>
@@ -54,9 +60,9 @@
             <div class="jumbotron">
           <div class="row" id="city-name"></div>
         </div>
-          <div class="row">
-            <h2>5-day forecast</h2>
-          </div>
+        <div class="row" id="five-day">
+        </div>
+
           <div class="row">
         
             <div class="col-sm-2" id="day-one"></div>

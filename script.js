@@ -105,6 +105,13 @@ $(document).ready(function () {
             
             cityList.append(uviTitle);
 
+            // Add five-day forecast
+            var fiveDay = $("<h2>");
+            fiveDay.text("5-Day Forecast:");
+            $("#five-day").append(fiveDay);
+
+
+
             // Day one forecast
 
             var dayOne = $("<div>");
